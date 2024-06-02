@@ -1,4 +1,37 @@
 
-vscode:
-  extensions:
-    - formulahendry.code-runner
+
+let nfts = [];
+
+
+function mintNFT(name, description, image) {
+ 
+    let nft = {
+        name: name,
+        description: description,
+        image: image
+    };
+    
+    nfts.push(nft);
+}
+
+
+function listNFTs() {
+    nfts.forEach(function(nft) {
+        console.log("Name: " + nft.name);
+        console.log("Description: " + nft.description);
+        console.log("Image: " + nft.image);
+    });
+}
+
+
+function getTotalSupply() {
+    console.log("Total number of NFTs: " + nfts.length);
+}
+
+
+mintNFT("NFT 1", "Description 1", "image1.jpg");
+mintNFT("NFT 2", "Description 2", "image2.jpg");
+
+listNFTs();
+getTotalSupply();
+
